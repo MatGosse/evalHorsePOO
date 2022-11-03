@@ -1,7 +1,9 @@
 <?php
     
 namespace App\Model;
-    
+
+use Error;
+
 abstract class Equine extends Animals
 {
     private const ACCEPTEDCOLOR = ['Alzan', 'Bai', 'Pie', 'Grey', 'White'];
@@ -39,7 +41,7 @@ abstract class Equine extends Animals
     public function setColor(string $color):self
     {
         if(in_array($color,self::ACCEPTEDCOLOR)===false){
-            // throw new Exception("Invalid color");
+            throw new Error("color invalid use 'Alzan', 'Bai', 'Pie', 'Grey', 'White' ps sorry for uppercase");
             return $this;
         }   
         $this->color = $color;
@@ -90,7 +92,7 @@ abstract class Equine extends Animals
     public function setRaider(Raider $raider):self
     {
         $this->raider = $raider;
-
+        
         return $this;
     }
 }

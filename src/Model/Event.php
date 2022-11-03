@@ -1,5 +1,7 @@
 <?php
     namespace App\Model;
+    use App\Model\Sheitland;
+    use Error;
 
     class Event
     {
@@ -10,16 +12,15 @@
 
         public function __construct(array $entrants, string $name, string $type)
         {
-            $this->setName($name)
-                ->setType($type)
-                ->setEntrants($entrants);
+
+                $this->setName($name)->setType($type)->setEntrants($entrants);
                 echo $this->__toString();
         }
 
         /**
          * Get the value of entrants
          */ 
-        public function getEntrants()
+        public function getEntrants():array
         {
                 return $this->entrants;
         }
@@ -29,13 +30,16 @@
          * @param $entrant <Equine>[]
          * @return  self
          */ 
-        public function setEntrants(array $entrants)
-        {   
-                foreach($entrants as $entrants){
-                    // check if horse can do competition
-                    if($entrants->canDoTheCompetition($this->getType())){
-                        $this->entrants[] = $entrants;    
-                    }
+        public function setEntrants(array $entrants):self
+        {       
+                foreach($entrants as $entrant){
+                        if(get_class($entrant) !== "Sheitland"){
+                                //throw new Error("");
+                        }
+                        // check if horse can do competition
+                        if($entrant->canDoTheCompetition($this->getType())){
+                                $this->entrants[] = $entrant;    
+                        }   
                 }
 
                 return $this;
@@ -44,7 +48,7 @@
         /**
          * Get the value of name
          */ 
-        public function getName()
+        public function getName():string
         {
                 return $this->name;
         }
@@ -54,7 +58,7 @@
          *
          * @return  self
          */ 
-        public function setName(string $name)
+        public function setName(string $name):self
         {
                 $this->name = $name;
 
@@ -74,10 +78,9 @@
          *
          * @return  self
          */ 
-        public function setType(string $type)
+        public function setType(string $type):self
         {
                 $this->type = $type;
-
                 return $this;
         }
 
