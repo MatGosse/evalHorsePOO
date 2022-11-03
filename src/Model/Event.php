@@ -28,7 +28,7 @@
          *
          * @return  self
          */ 
-        public function setEntrants($entrants)
+        public function setEntrants(array $entrants)
         {   
                 foreach($entrants as $entrants){
                     // check if horse can do competition
@@ -53,7 +53,7 @@
          *
          * @return  self
          */ 
-        public function setName($name)
+        public function setName(string $name)
         {
                 $this->name = $name;
 
@@ -73,7 +73,7 @@
          *
          * @return  self
          */ 
-        public function setType($type)
+        public function setType(string $type)
         {
                 $this->type = $type;
 
