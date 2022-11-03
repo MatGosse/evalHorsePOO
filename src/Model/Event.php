@@ -11,8 +11,8 @@
         public function __construct(array $entrants, string $name, string $type)
         {
             $this->setName($name)
-                ->setEntrants($entrants)
-                ->setType($type);
+                ->setType($type)
+                ->setEntrants($entrants);
         }
 
         /**
@@ -32,7 +32,7 @@
         {   
                 foreach($entrants as $entrants){
                     // check if horse can do competition
-                    if($entrants->canDoTheCompetition()){
+                    if($entrants->canDoTheCompetition($this->getType())){
                         $this->entrants[] = $entrants;    
                     }
                 }
