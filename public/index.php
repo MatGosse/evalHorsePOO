@@ -13,6 +13,8 @@ $bob = new Raider("bob", $bobAddress);
 
 $findus = new Sheitland("findus", 'White', 200, $bob);
 
+$event = new Event([$findus],'zqsd','PoneyGames');
+
 
 // echo $findus->getId() . "\n";
 // echo $findus2->getId();
