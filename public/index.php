@@ -3,6 +3,7 @@
 use App\Model\Raider;
 use App\Model\Sheitland;
 use App\Model\Address;
+use App\Model\Event;
 
 require_once("../src/app.php");
 
