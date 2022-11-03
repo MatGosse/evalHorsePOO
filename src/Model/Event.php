@@ -3,7 +3,7 @@
 
     class Event
     {
-        private array $entrants;
+        private array $entrants =[];
         private string $name;
         // oui j'aurais pu faire une class type mais pas le temps
         private string $type;
@@ -13,6 +13,7 @@
             $this->setName($name)
                 ->setType($type)
                 ->setEntrants($entrants);
+                echo $this->__toString();
         }
 
         /**
@@ -25,7 +26,7 @@
 
         /**
          * Set the value of entrants
-         *
+         * @param $entrant <Equine>[]
          * @return  self
          */ 
         public function setEntrants(array $entrants)
@@ -78,5 +79,10 @@
                 $this->type = $type;
 
                 return $this;
+        }
+
+        public function __toString(): string
+        {
+            return "Event " . $this->getName() . " of type ". $this->getType() . " was crated whith " . sizeof($this->getEntrants()) . " entrants \n";
         }
     }

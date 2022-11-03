@@ -5,5 +5,6 @@
         public function __construct($name, $address)
         {
             parent::__construct($name,$address);
+            $this->__toString();
         }
     }

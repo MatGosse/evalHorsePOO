@@ -9,6 +9,7 @@
         {
             $this->setName($name)
                 ->setAddress($address);
+                echo $this->__toString();
         }
 
         /**
@@ -49,5 +50,10 @@
                 $this->address = $address;
 
                 return $this;
+        }
+
+        public function __toString(): string
+        {
+            return "An human " . $this->getName() . " was added \n";
         }
     } 

@@ -8,12 +8,13 @@
         public function __construct(Manager $manager, Address $address){
             $this->setManager($manager)
                 ->setAddress($address);
+                echo $this->__toString();
         }
 
         /**
          * Get the value of manager
          */ 
-        public function getManager()
+        public function getManager(): Manager
         {
                 return $this->manager;
         }
@@ -23,7 +24,7 @@
          *
          * @return  self
          */ 
-        public function setManager($manager)
+        public function setManager(Manager $manager)
         {
                 $this->manager = $manager;
 
@@ -43,10 +44,14 @@
          *
          * @return  self
          */ 
-        public function setAddress($address)
+        public function setAddress(Address $address)
         {
                 $this->address = $address;
-
                 return $this;
+        }
+
+        public function __toString()
+        {
+                return 'A Stable whit manager ' . $this->getManager()->getName() . " was created \n";
         }
     }

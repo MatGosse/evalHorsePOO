@@ -11,6 +11,7 @@ class Sheitland extends Equine implements EquineType{
     {
         parent::__construct($name, $color, $water, $raider);
         $this->setId();
+        echo $this->__toString();
     }
 
     public function canDoTheCompetition(string $competioon): bool
@@ -44,7 +45,11 @@ class Sheitland extends Equine implements EquineType{
     {   
         $id =  '0000-' . substr($this->getName(),0,1) . '-' . substr($this->getColor(),0,1) . "-" . $this->getEffectif();
         $this->id = $id;
-        echo $this->id;
         return $this;
     }
+
+    public function __toString(): string
+    {
+        return "An Sheitland name " . $this->getName() . " of color ". $this->getColor() ." and id " . $this->getId() ." was created \n"; 
+    } 
 }
