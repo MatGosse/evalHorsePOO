@@ -61,7 +61,6 @@
         {
                 return $this->code;
         }
-
         /**
          * Set the value of code
          * @param int $code
@@ -72,5 +71,11 @@
                 $this->code = $code;
 
                 return $this;
+        }
+
+        // -------------------- other functions
+
+        public function __toString():string{
+                return $this->getStreet() . ' ' . $this->getCity() . ' ' . $this->getCode();
         }
     }

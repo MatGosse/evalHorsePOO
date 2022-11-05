@@ -106,6 +106,6 @@
          */
         public function __toString(): string
         {
-            return "Event " . $this->getName() . " of type ". $this->getType() . " was crated whith " . sizeof($this->getEntrants()) . " entrants \n";
+            return "Event " . $this->getName() . " of type ". $this->getType() . " was crated with " . sizeof($this->getEntrants()) . " entrants \n";
         }
     }

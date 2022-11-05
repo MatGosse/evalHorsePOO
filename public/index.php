@@ -8,7 +8,7 @@ use App\Model\Manager;
 use App\Model\Stable;
 
 require_once("../src/app.php");
-
+// ---------- Don"t forget to read the documentation in doc ---------- //
 // creation of an address
 $bobAddress = new Address("1 rue random","randomville",14000);
 // creation Human

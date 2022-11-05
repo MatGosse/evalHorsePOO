@@ -75,4 +75,6 @@ Set the id of the Equine by the Color, Name, and Effectif
 | Entrants      | `false` | array<Equine> |
 #### Methodes
 ##### setEntrants(array<Equine>): self
-Set the Entrants of the event verify the type and if the Equine is enable to do the competiton 
+Set the Entrants of the event verify the type and if the Equine is enable to do the competiton
+##### addEntrant(Equine):self
+Set a new Entrant to the event.

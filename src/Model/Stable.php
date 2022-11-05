@@ -59,6 +59,6 @@
          */
         public function __toString(): string
         {
-                return 'A Stable whit manager ' . $this->getManager()->getName() . " was created \n";
+                return 'A Stable whit manager ' . $this->getManager()->getName() . " at " . $this->getAddress()->__toString() . " was created \n";
         }
     }

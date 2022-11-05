@@ -54,6 +54,6 @@
 
         public function __toString(): string
         {
-            return "An human " . $this->getName() . " was added \n";
+            return "An human " . $this->getName() . "living at" . $this->getAddress()->__toString() . "was added \n";
         }
     } 
