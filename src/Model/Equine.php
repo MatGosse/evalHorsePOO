@@ -6,7 +6,7 @@ use Error;
 
 abstract class Equine extends Animals
 {
-    private const ACCEPTEDCOLOR = ['Alzan', 'Bai', 'Pie', 'Grey', 'White'];
+    private const ACCEPTEDCOLOR = ['alzan', 'bai', 'pie', 'grey', 'white'];
     private static $effectif = 0;
 
     private string $color;
@@ -40,11 +40,12 @@ abstract class Equine extends Animals
      */ 
     private function setColor(string $color):self
     {
+        $color = strtolower($color);
         if(in_array($color,self::ACCEPTEDCOLOR)===false){
-            throw new Error("color invalid use 'Alzan', 'Bai', 'Pie', 'Grey', 'White' ps sorry for uppercase");
-            return $this;
-        }   
-        $this->color = $color;
+            throw new Error("color invalid use 'Alzan', 'Bai', 'Pie', 'Grey', 'White'");
+        }else{
+            $this->color = $color;
+        }
         return $this;
     }
     
