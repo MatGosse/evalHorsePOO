@@ -6,7 +6,7 @@
     class Event
     {
         /**
-         * @param array<Equine>
+         * @var array<Equine>
          */
         private array $entrants =[];
         private string $name;
@@ -15,26 +15,24 @@
 
         public function __construct(array $entrants, string $name, string $type)
         {
-
                 $this->setName($name)->setType($type)->setEntrants($entrants);
                 echo $this->__toString();
         }
 
+
+        // -------------------- getter & setter
+
         /**
          * Get the value of entrants
-         * 
          * @return self
          */ 
         public function getEntrants():array
         {
                 return $this->entrants;
         }
-
         /**
          * Set the value of entrants
-         * 
          * @param array<Equine> $entrant
-         * 
          * @return  self
          */ 
         private function setEntrants(array $entrants):self
@@ -52,22 +50,17 @@
                 }
                 return $this;
         }
-
         /**
          * Get the value of name
-         * 
          * @return  self
          */ 
         public function getName():string
         {
                 return $this->name;
         }
-
         /**
          * Set the value of name
-         * 
          * @param string $name
-         *
          * @return  self
          */ 
         private function setName(string $name):self
@@ -76,21 +69,17 @@
 
                 return $this;
         }
-
         /**
          * Get the value of type
-         * 
-         * @return  self
+         * @return string
          */ 
-        public function getType()
+        public function getType():string
         {
                 return $this->type;
         }
-
         /**
          * Set the value of type
-         *
-         * @return  self
+         * @return self
          */ 
         private function setType(string $type):self
         {
@@ -98,19 +87,24 @@
                 return $this;
         }
 
-        public function __toString(): string
-        {
-            return "Event " . $this->getName() . " of type ". $this->getType() . " was crated whith " . sizeof($this->getEntrants()) . " entrants \n";
-        }
+        // -------------------- other function
 
         /**
+         * Set an new Equine as entrant
          * @param Equine $equine 
-         * 
-         * @return  self
+         * @return self
          */
         public function addEntrant(Equine $equine):self
         {
                 $this->entrants[] = $equine;
                 return $this;
+        }
+        /**
+         * Give all the informations of the event
+         * @return string
+         */
+        public function __toString(): string
+        {
+            return "Event " . $this->getName() . " of type ". $this->getType() . " was crated whith " . sizeof($this->getEntrants()) . " entrants \n";
         }
     }

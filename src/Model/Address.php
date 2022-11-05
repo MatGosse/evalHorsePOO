@@ -13,48 +13,49 @@
                 ->setCode($code);
         }
 
+        // -------------------- getter & setter
+
         /**
          * Get the value of street
+         * @return string
          */ 
         public function getStreet():string
         {
                 return $this->street;
         }
-
         /**
          * Set the value of street
-         *
+         * @param string $street
          * @return  self
          */ 
-        public function setStreet($street):self
+        private function setStreet(string $street):self
         {
                 $this->street = $street;
 
                 return $this;
         }
-
         /**
          * Get the value of city
+         * @return string
          */ 
         public function getCity():string
         {
                 return $this->city;
         }
-
         /**
          * Set the value of city
-         *
-         * @return  self
+         * @param string $city
+         * @return self
          */ 
-        public function setCity($city):self
+        private function setCity(string $city):self
         {
                 $this->city = $city;
 
                 return $this;
         }
-
         /**
          * Get the value of code
+         * @return int
          */ 
         public function getCode():int
         {
@@ -63,10 +64,10 @@
 
         /**
          * Set the value of code
-         *
+         * @param int $code
          * @return  self
          */ 
-        public function setCode($code):self
+        private function setCode(int $code):self
         {
                 $this->code = $code;
 

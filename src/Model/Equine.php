@@ -27,6 +27,7 @@ abstract class Equine extends Animals
     
     /**
      * Get the value of color
+     * @return string
      */ 
     public function getColor():string
     {
@@ -35,10 +36,9 @@ abstract class Equine extends Animals
     /**
      * Set the value of color
      * @param string $color
-     * 
      * @return  self
      */ 
-    public function setColor(string $color):self
+    private function setColor(string $color):self
     {
         if(in_array($color,self::ACCEPTEDCOLOR)===false){
             throw new Error("color invalid use 'Alzan', 'Bai', 'Pie', 'Grey', 'White' ps sorry for uppercase");
@@ -57,42 +57,39 @@ abstract class Equine extends Animals
     }
     /**
      * Set the value of water
-     *
-     * @return  self
+     * @param int $water
+     * @return self
      */ 
-    public function setWater(int $water):self
+    private function setWater(int $water):self
     {
         $this->water = $water;
 
         return $this;
     }
-        
-
     /**
      * Get the value of effectif
+     * @return int
      */ 
     public function getEffectif():int
     {
         return self::$effectif;
     }
-
     /**
      * Get the value of raider
+     * @return Raider
      */ 
     public function getRaider():Raider
     {
         return $this->raider;
     }
-
     /**
      * Set the value of raider
-     *
+     * @param Raider $raider
      * @return  self
      */ 
     public function setRaider(Raider $raider):self
     {
         $this->raider = $raider;
-        
         return $this;
     }
 }

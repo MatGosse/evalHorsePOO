@@ -18,7 +18,7 @@ $stable = new Stable($boby, $bobAddress);
 // creation of equine
 $findus = new Sheitland("findus", 'White', 200, $bob);
 // new event creation
-$event = new Event([$findus, $bob],'zqsd','PoneyGames');
+$event = new Event([$findus],'zqsd','PoneyGames');
 
 // ---- Errors cases
 // $event = new Event([$findus, $bob],'zqsd','PoneyGames');

@@ -12,6 +12,8 @@
                 echo $this->__toString();
         }
 
+        // -------------------- getter & setter
+
         /**
          * Get the value of name
          */ 
@@ -19,19 +21,17 @@
         {
                 return $this->name;
         }
-
         /**
          * Set the value of name
-         *
+         * @param string $name
          * @return  self
          */ 
-        public function setName(string $name): self
+        private function setName(string $name): self
         {
                 $this->name = $name;
 
                 return $this;
         }
-
         /**
          * Get the value of address
          */ 
@@ -39,18 +39,18 @@
         {
                 return $this->address;
         }
-
         /**
          * Set the value of address
-         *
          * @return  self
          */ 
-        public function setAddress(Address $address): self
+        private function setAddress(Address $address): self
         {
                 $this->address = $address;
 
                 return $this;
         }
+
+        // -------------------- other function
 
         public function __toString(): string
         {
