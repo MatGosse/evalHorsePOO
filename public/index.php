@@ -9,18 +9,18 @@ use App\Model\Stable;
 
 require_once("../src/app.php");
 
-
-
+// creation of an address
 $bobAddress = new Address("1 rue random","randomville",14000);
+// creation Human
 $bob = new Raider("bob", $bobAddress);
 $boby = new Manager("boby", $bobAddress);
-
 $stable = new Stable($boby, $bobAddress);
-
+// creation of equine
 $findus = new Sheitland("findus", 'White', 200, $bob);
+// new event creation
+$event = new Event([$findus, $bob],'zqsd','PoneyGames');
 
-$event = new Event([$findus],'zqsd','PoneyGames');
-
-
-// echo $findus->getId() . "\n";
-// echo $findus2->getId();
+// ---- Errors cases
+// $event = new Event([$findus, $bob],'zqsd','PoneyGames');
+// $findus = new Sheitland("findus", 'red', 200, $bob);
+// $stable = new Stable($bobAddress, $boby);
