@@ -2,9 +2,9 @@
 
 namespace App\Model;
 
-class Sheitland extends Equine implements EquineType{
+class Horse extends Equine implements EquineType{
 
-    private const COMPETITONAUTHORIZE = ['Jump', 'Dressage', 'Cross', 'PoneyGames'];
+    private const COMPETITONAUTHORIZE = ['Jump', 'Dressage', 'Cross'];
     private string $id;
 
     public function __construct(string $name, string $color, int $water, Raider $raider)
@@ -49,7 +49,7 @@ class Sheitland extends Equine implements EquineType{
      */
     public function __toString(): string
     {
-        return "An Sheitland name " . $this->getName() . " of color ". $this->getColor() ." and id " . $this->getId() ." was created \n"; 
+        return "An Poney name " . $this->getName() . " of color ". $this->getColor() ." and id " . $this->getId() ." was created \n"; 
     }
     /**
      * Say if the Sheitland can dothe competiton
