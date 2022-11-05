@@ -38,6 +38,7 @@
         private function setEntrants(array $entrants):self
         {       
                 foreach($entrants as $entrant){
+                        // check type
                         if($entrant instanceof Equine===false){
                                 throw new Error("One entrant is not an Equine");
                         }
